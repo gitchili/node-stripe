@@ -9,6 +9,22 @@ const exphbs = require('express-handlebars');
 // initialize app
 const app = express();
 
+// handlebars middleware
+app.engine('handlebars',exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
+// body parser middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
+
+// set static folder
+app.use(express.static(`${__dirname}/public`));
+
+// index route
+app.get('/', (req, res) => {
+    res.render('index');
+});
+
 
 // heroku deployment chooses process.env.PORT or 5000 for local
 const port = process.env.PORT || 5000;
