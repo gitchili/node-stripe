@@ -4,7 +4,7 @@
   "description": "App to sell Tee-Shirts",
   "main": "app.js",
   "scripts": {
-    "start": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "author": "",
   "license": "MIT",
@@ -12,6 +12,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
+    "firebase": "^5.0.4",
     "stripe": "^6.1.1"
   }
 }
